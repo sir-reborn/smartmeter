@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "189679540394",
+    "firebase_url": "https://nimi-33d5a-default-rtdb.firebaseio.com",
+    "project_id": "nimi-33d5a",
+    "storage_bucket": "nimi-33d5a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189679540394:android:345081e201959dd66cd8d3",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClcjIf_LGtSK_LlnOWUzENAaFRdiKUpsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189679540394:android:a0ed76e9a89d1b756cd8d3",
+        "android_client_info": {
+          "package_name": "com.example.smartmeter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClcjIf_LGtSK_LlnOWUzENAaFRdiKUpsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
