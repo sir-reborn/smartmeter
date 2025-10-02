@@ -20,7 +20,6 @@ class MySliverAppBar extends StatefulWidget {
 }
 
 class _MySliverAppBarState extends State<MySliverAppBar> {
-  final NotificationService notificationService = NotificationService();
   @override
   Widget build(BuildContext context) {
     final notificationService = Provider.of<NotificationService>(context);
