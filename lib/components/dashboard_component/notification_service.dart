@@ -15,8 +15,7 @@ class NotificationService {
         'timestamp': DateTime.now(),
         'read': false,
       };
-      _notifications.insert(0, newNotification); // Add to beginning
-      // You might want to add a callback here to update UI
+      _notifications.insert(0, newNotification);
     });
   }
 
