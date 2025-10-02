@@ -2,6 +2,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_badge/icon_badge.dart';
+import 'package:provider/provider.dart';
 import 'package:smartmeter/pages/notifications.dart';
 import 'package:smartmeter/service/notification_service.dart';
 
