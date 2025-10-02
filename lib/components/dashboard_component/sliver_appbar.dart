@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_badge/icon_badge.dart';
 import 'package:smartmeter/pages/notifications.dart';
-
-import 'notification_service.dart';
+import 'package:smartmeter/service/notification_service.dart';
 
 String userFirstName = "Hope";
 const String collapedAppBarTitle = 'Power Outage Meter';
