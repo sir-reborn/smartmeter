@@ -9,10 +9,8 @@ class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
 
   @override
-  void initState() {
-    super.initState();
-    _notificationService.initialize();
-  }
+  State<NotificationsScreen> createState() => _NotificationsScreenState();
+}
 
   @override
   Widget build(BuildContext context) {
