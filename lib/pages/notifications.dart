@@ -72,7 +72,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               ),
             )
           : ListView.builder(
-              itemCount: _notificationService.notifications.length,
+              itemCount: notificationService.notifications.length,
               itemBuilder: (context, index) {
                 final notification = _notificationService.notifications[index];
                 return NotificationCard(
