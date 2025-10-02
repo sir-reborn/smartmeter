@@ -23,6 +23,10 @@ class _DashboardState extends State<Dashboard> {
   // Move these to a separate class to manage data
   final _dataManager = RealTimeDataManager();
 
+  // Track previous values for change detection
+  String _previousStatus = "false";
+  String _previousFaults = "No fault";
+
   @override
   void initState() {
     _scrollController = ScrollController()
