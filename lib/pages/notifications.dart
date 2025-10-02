@@ -76,9 +76,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               itemBuilder: (context, index) {
                 final notification = notificationService.notifications[index];
                 return NotificationCard(
-                  message: notification['message'],
-                  timestamp: notification['timestamp'],
-                  isRead: notification['read'],
+                  notification: notification,
                   onTap: () {
                     notificationService.markAsRead(notification.id);
                     Navigator.push(
