@@ -1,7 +1,6 @@
 import 'package:smartmeter/utilities/spacer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smartmeter/pages/dashboard.dart';
 
 class CurrentPowerSupplyContainer extends StatefulWidget {
   const CurrentPowerSupplyContainer({
@@ -32,7 +31,6 @@ class _CurrentPowerSupplyContainerState
         borderRadius: BorderRadius.all(Radius.circular(size.width / 40)),
       ),
       width: size.width - (size.width / 7),
-      // height: size.height / 8,
       child: InkWell(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
