@@ -156,12 +156,12 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
               Row(
                 children: [
                   Icon(
-                    meterState
-                        ? CupertinoIcons.dot_radiowaves_right
-                        : CupertinoIcons.wifi_slash,
-                    color: meterState
-                        ? const Color.fromRGBO(0, 167, 167, 0.5)
-                        : Colors.redAccent.withOpacity(0.5),
+                    faultDetected
+                        ? CupertinoIcons.exclamationmark_circle
+                        : CupertinoIcons.dot_radiowaves_right,
+                    color: faultDetected
+                        ? Colors.redAccent.withOpacity(0.7)
+                        : const Color.fromRGBO(0, 167, 167, 0.7),
                   ),
                   Text(
                     meterState ? " Active" : " Inactive",
