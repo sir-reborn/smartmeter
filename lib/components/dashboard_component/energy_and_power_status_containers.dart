@@ -164,7 +164,7 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
                         : const Color.fromRGBO(0, 167, 167, 0.7),
                   ),
                   Text(
-                    meterState ? " Active" : " Inactive",
+                    faultDetected ? " Fault\nDetected" : " Active",
                     style: TextStyle(
                       color: Colors.black87,
                       fontFamily: 'Poppins',
