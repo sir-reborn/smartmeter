@@ -168,7 +168,7 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
                     style: TextStyle(
                       color: Colors.black87,
                       fontFamily: 'Poppins',
-                      fontSize: size.width / 15,
+                      fontSize: size.width / 18,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
