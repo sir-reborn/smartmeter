@@ -61,6 +61,8 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final notificationService = Provider.of<NotificationService>(context);
+
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       color: notification.isRead ? Colors.grey[100] : Colors.blue[50],
