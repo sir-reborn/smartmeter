@@ -5,12 +5,8 @@ import 'package:smartmeter/pages/notification_detail_screen.dart';
 
 import '../models/notification_model.dart';
 
-  @override
-  State<Notifications> createState() => _NotificationsState();
-}
-
-class _NotificationsState extends State<Notifications> {
-  final NotificationService _notificationService = NotificationService();
+class NotificationsScreen extends StatefulWidget {
+  const NotificationsScreen({super.key});
 
   @override
   void initState() {
