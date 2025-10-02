@@ -7,7 +7,7 @@ import 'package:smartmeter/pages/notifications.dart';
 import 'notification_service.dart';
 
 String userFirstName = "Hope";
-const String collapedAppBarTitle = 'Power Outage Detector';
+const String collapedAppBarTitle = 'Power Outage Meter';
 
 var top = 0.0;
 var appbarThreshold = 110.0;
