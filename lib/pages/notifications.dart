@@ -167,8 +167,6 @@ class NotificationCard extends StatelessWidget {
                         color: Colors.black87,
                       ),
                     ),
-
-                    // 📍 Location address
                     const SizedBox(height: 6),
 
                     // ⏱ Time ago
