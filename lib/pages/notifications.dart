@@ -72,7 +72,6 @@ class NotificationCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // ⚠️ Warning icon (same for all)
               Icon(Icons.warning_rounded, color: Colors.red, size: 28),
               const SizedBox(width: 14),
 
