@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:smartmeter/utilities/spacer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../service/fault_status_provider.dart';
 
-import '../../pages/dashboard.dart';
-
-bool meterState = true;
+bool meterState = false;
 
 class EnergyConsumptionContainer extends StatefulWidget {
   const EnergyConsumptionContainer({Key? key, required this.energy})
     : super(key: key);
-  // final RealTimeDataManager dataManager;
   final String energy;
   @override
   _EnergyConsumptionContainerState createState() =>
@@ -33,7 +28,6 @@ class _EnergyConsumptionContainerState
         borderRadius: BorderRadius.all(Radius.circular(size.width / 40)),
       ),
       width: size.width / 2.42,
-      //height: size.height / 4,
       child: InkWell(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width / 30),
@@ -95,15 +89,9 @@ class _EnergyConsumptionContainerState
 }
 
 //------------------------------*********************-----------------------------
-
-class MetersDetailsContainer extends StatefulWidget {
+class MetersDetailsContainer extends StatelessWidget {
   const MetersDetailsContainer({Key? key}) : super(key: key);
 
-  @override
-  _MetersDetailsContainerState createState() => _MetersDetailsContainerState();
-}
-
-class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
   @override
   Widget build(BuildContext context) {
     final faultStatus = Provider.of<FaultStatusProvider>(context);
@@ -112,6 +100,7 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
     Size size = MediaQuery.of(context).size;
 
     return Container(
+      // height: size.height * 0.0005,
       decoration: BoxDecoration(
         color: faultDetected
             ? Colors.red.withOpacity(0.08)
@@ -119,7 +108,6 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
         borderRadius: BorderRadius.all(Radius.circular(size.width / 40)),
       ),
       width: size.width / 2.42,
-      //height: size.height / 4,
       child: InkWell(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width / 30),
