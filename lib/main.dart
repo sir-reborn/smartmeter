@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:smartmeter/pages/dashboard.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import 'package:smartmeter/service/fault_status_provider.dart';
+import 'package:smartmeter/service/notification_service.dart';
+import 'package:smartmeter/pages/notifications.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
