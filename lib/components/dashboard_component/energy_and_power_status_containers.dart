@@ -106,6 +106,9 @@ class MetersDetailsContainer extends StatefulWidget {
 class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
   @override
   Widget build(BuildContext context) {
+    final faultStatus = Provider.of<FaultStatusProvider>(context);
+    final bool faultDetected = faultStatus.faultDetected;
+
     Size size = MediaQuery.of(context).size;
 
     return Container(
