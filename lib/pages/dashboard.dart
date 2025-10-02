@@ -36,7 +36,7 @@ class _DashboardState extends State<Dashboard> {
         });
       });
 
-    _dataStream = _databaseRef.child('sensor_data').onValue;
+    _dataStream = _databaseRef.onValue;
     _dataStream.listen((event) {
       if (event.snapshot.value != null) {
         setState(() {
