@@ -16,15 +16,59 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NotificationAppBar(
-        // onClearAll: () {
-        //   setState(() {
-        //     _notificationService.clearAll();
-        //   });
-        // },
+      appBar: AppBar(
+        title: const Text('Notifications'),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 0,
+        actions: [
+          if (notificationService.unreadCount > 0)
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: CircleAvatar(
+                backgroundColor: Colors.red,
+                radius: 12,
+                child: Text(
+                  notificationService.unreadCount.toString(),
+                  style: const TextStyle(fontSize: 12, color: Colors.white),
+                ),
+              ),
+            ),
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'mark_all_read') {
+                notificationService.markAllAsRead();
+              } else if (value == 'clear_all') {
+                _showClearAllDialog();
+              }
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'mark_all_read',
+                child: Text('Mark all as read'),
+              ),
+              const PopupMenuItem(
+                value: 'clear_all',
+                child: Text('Clear all notifications'),
+              ),
+            ],
+          ),
+        ],
       ),
-      body: _notificationService.notifications.isEmpty
-          ? const Center(child: Text('No notifications'))
+      body: notificationService.notifications.isEmpty
+          ? const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.notifications_none, size: 64, color: Colors.grey),
+                  SizedBox(height: 16),
+                  Text(
+                    'No notifications',
+                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                  ),
+                ],
+              ),
+            )
           : ListView.builder(
               itemCount: _notificationService.notifications.length,
               itemBuilder: (context, index) {
