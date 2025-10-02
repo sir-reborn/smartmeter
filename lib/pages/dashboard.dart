@@ -59,6 +59,56 @@ class _DashboardState extends State<Dashboard> {
     super.initState();
   }
 
+  void _checkForFaults(Map<String, dynamic> data) {
+    final notificationService = Provider.of<NotificationService>(
+      context,
+      listen: false,
+    );
+    final faultProvider = Provider.of<FaultStatusProvider>(
+      context,
+      listen: false,
+    );
+
+    final currentStatus = data['staus']?.toString() ?? "false";
+    final currentFaults = data['faults']?.toString() ?? "No fault";
+    final sensorData = Map<String, dynamic>.from(data['sensor_data'] ?? {});
+
+    // ✅ Update global fault status so other widgets (like MeterDetailsContainer) can use it
+    faultProvider.updateStatus(currentStatus == "true", currentFaults);
+
+    if (currentStatus == "true" &&
+        currentFaults != "No fault" &&
+        currentFaults != _previousFaults) {
+      notificationService.resetLastFaultType();
+
+      String faultType = "Unknown";
+      if (currentFaults.toLowerCase().contains("short circuit")) {
+        faultType = "Short Circuit";
+      } else if (currentFaults.toLowerCase().contains("open circuit")) {
+        faultType = "Open Circuit";
+      }
+
+      notificationService.addNotification(
+        faultType: faultType,
+        faultDescription: currentFaults,
+        sensorData: sensorData,
+        latitude: (sensorData['latitude'] ?? 0).toDouble(),
+        longitude: (sensorData['longitude'] ?? 0).toDouble(),
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('New fault detected: $faultType'),
+          backgroundColor: Colors.redAccent,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+
+    _previousStatus = currentStatus;
+    _previousFaults = currentFaults;
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
