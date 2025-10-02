@@ -67,22 +67,60 @@ class NotificationCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
+          padding: const EdgeInsets.all(14.0),
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                message,
-                style: TextStyle(
-                  fontWeight: isRead ? FontWeight.normal : FontWeight.bold,
-                  fontSize: 16,
+              // ⚠️ Warning icon (same for all)
+              Icon(Icons.warning_rounded, color: Colors.red, size: 28),
+              const SizedBox(width: 14),
+
+              // Notification text section
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // ⚠️ Fault message
+                    Text(
+                      notificationService.getBriefMessage(
+                        notification.faultDescription,
+                      ),
+                      style: TextStyle(
+                        fontWeight: notification.isRead
+                            ? FontWeight.w500
+                            : FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.black87,
+                      ),
+                    ),
+
+                    // 📍 Location address
+                    const SizedBox(height: 6),
+
+                    // ⏱ Time ago
+                    Text(
+                      notificationService.formatTimestamp(
+                        notification.timestamp,
+                      ),
+                      style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                NotificationService().formatTimestamp(timestamp),
-                style: TextStyle(color: Colors.grey[600], fontSize: 12),
-              ),
+
+              // Unread indicator
+              if (!notification.isRead)
+                Padding(
+                  padding: const EdgeInsets.only(top: 6.0),
+                  child: Container(
+                    width: 10,
+                    height: 10,
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
