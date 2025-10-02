@@ -29,10 +29,9 @@ class _BuildChartsState extends State<BuildCharts> {
           labelIntersectAction: AxisLabelIntersectAction
               .rotate45, // Ensures labels don’t overwrite each other.
         ),
-        //primaryYAxis: CategoryAxis(title: AxisTitle(text: widget.unit)),
         series: <SplineSeries<DataPoint, String>>[
           SplineSeries<DataPoint, String>(
-            dataSource: widget.data, //your List<DataPoint>
+            dataSource: widget.data, // List<DataPoint>
             xValueMapper: (DataPoint point, _) =>
                 point.time, // maps DataPoint.time to the x-axis
             yValueMapper: (DataPoint point, _) => point.value,
