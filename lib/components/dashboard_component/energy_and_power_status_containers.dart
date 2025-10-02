@@ -127,7 +127,7 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const Spacer0(),
+              faultDetected ? SizedBox(height: 9) : SizedBox(height: 19),
               CircleAvatar(
                 radius: size.width / 20,
                 backgroundColor: faultDetected
