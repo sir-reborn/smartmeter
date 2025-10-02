@@ -3,6 +3,9 @@ import 'package:smartmeter/components/dashboard_component/sliver_appbar.dart';
 import 'package:smartmeter/components/dashboard_component/sliver_body.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import '../service/fault_status_provider.dart';
+import '../service/notification_service.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
