@@ -34,9 +34,15 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   timestamp: notification['timestamp'],
                   isRead: notification['read'],
                   onTap: () {
-                    setState(() {
-                      notification['read'] = true;
-                    });
+                    notificationService.markAsRead(notification.id);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NotificationDetailScreen(
+                          notification: notification,
+                        ),
+                      ),
+                    );
                   },
                 );
               },
