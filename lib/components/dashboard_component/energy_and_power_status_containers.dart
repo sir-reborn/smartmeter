@@ -113,7 +113,9 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(0, 167, 167, 0.08),
+        color: faultDetected
+            ? Colors.red.withOpacity(0.08)
+            : const Color.fromRGBO(0, 167, 167, 0.08),
         borderRadius: BorderRadius.all(Radius.circular(size.width / 40)),
       ),
       width: size.width / 2.42,
