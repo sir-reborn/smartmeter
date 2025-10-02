@@ -23,7 +23,7 @@ class _LocationCardState extends State<LocationCard> {
   bool _isLoading = true;
   double? _lastLatitude;
   double? _lastLongitude;
-
+  String get address => _address;
   @override
   void initState() {
     super.initState();
