@@ -141,19 +141,18 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
                   size: size.width / 12,
                 ),
               ),
-              const Spacer2(),
-              SizedBox(
-                width: size.width,
-                child: Text(
-                  "Meter Connection State",
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromRGBO(0, 167, 167, 1),
-                  ),
+              const SizedBox(height: 12),
+              Text(
+                "Meter Status",
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: faultDetected
+                      ? Colors.redAccent
+                      : const Color.fromRGBO(0, 167, 167, 1),
                 ),
               ),
-              const Spacer2(),
+              const SizedBox(height: 12),
               Row(
                 children: [
                   Icon(
