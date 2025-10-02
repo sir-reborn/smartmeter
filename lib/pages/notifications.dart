@@ -53,9 +53,7 @@ class NotificationCard extends StatelessWidget {
 
   const NotificationCard({
     super.key,
-    required this.message,
-    required this.timestamp,
-    required this.isRead,
+    required this.notification,
     required this.onTap,
   });
 
