@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:smartmeter/pages/dashboard.dart';
 import 'package:provider/provider.dart';
 import 'package:smartmeter/service/fault_status_provider.dart';
