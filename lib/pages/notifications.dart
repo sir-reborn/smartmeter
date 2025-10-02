@@ -3,8 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:smartmeter/service/notification_service.dart';
 import 'package:smartmeter/pages/notification_detail_screen.dart';
 
-class Notifications extends StatefulWidget {
-  const Notifications({super.key});
+import '../models/notification_model.dart';
 
   @override
   State<Notifications> createState() => _NotificationsState();
