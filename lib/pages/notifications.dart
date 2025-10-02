@@ -155,7 +155,6 @@ class NotificationCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // ⚠️ Fault message
                     Text(
                       notificationService.getBriefMessage(
                         notification.faultDescription,
