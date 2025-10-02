@@ -42,22 +42,31 @@ class _MySliverAppBarState extends State<MySliverAppBar> {
 
       //----------------------------------------------------------------------------
       actions: [
-        InkWell(
-          child: IconBadge(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Notifications()),
-              );
-            },
-            icon: const Icon(CupertinoIcons.bell),
-            itemCount: notificationService.unreadCount,
-            badgeColor: Colors.green,
-            hideZero: false,
-            top: size.height / 100,
-            right: size.width / 45,
-          ),
+        // Using Consumer to make the badge reactive to changes
+        Consumer<NotificationService>(
+          builder: (context, notificationService, child) {
+            return IconBadge(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationsScreen(),
+                  ),
+                );
+              },
+              icon: Icon(CupertinoIcons.bell, color: Colors.grey[700]),
+              itemCount: notificationService.unreadCount,
+              badgeColor: notificationService.unreadCount > 0
+                  ? Colors.green
+                  : Colors.red,
+              hideZero: false,
+              top: size.height / 100,
+              right: size.width / 45,
+              itemColor: Colors.white,
+            );
+          },
         ),
+        SizedBox(width: size.width / 30), // Add some spacing
       ],
 
       //----------------------------------------------------------------------------
