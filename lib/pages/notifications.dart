@@ -46,9 +46,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 }
 
 class NotificationCard extends StatelessWidget {
-  final String message;
-  final DateTime timestamp;
-  final bool isRead;
+  final AppNotification notification;
   final VoidCallback onTap;
 
   const NotificationCard({
