@@ -130,7 +130,9 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
               const Spacer0(),
               CircleAvatar(
                 radius: size.width / 20,
-                backgroundColor: const Color.fromRGBO(0, 167, 167, 0.12),
+                backgroundColor: faultDetected
+                    ? Colors.red.withOpacity(0.12)
+                    : const Color.fromRGBO(0, 167, 167, 0.12),
                 child: Icon(
                   CupertinoIcons.antenna_radiowaves_left_right,
                   color: const Color.fromRGBO(0, 167, 167, 1),
