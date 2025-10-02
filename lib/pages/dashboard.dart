@@ -20,10 +20,8 @@ class _DashboardState extends State<Dashboard> {
   bool _showBackToTopButton = false;
   late ScrollController _scrollController;
 
-  // Move these to a separate class to manage data
   final _dataManager = RealTimeDataManager();
 
-  // Track previous values for change detection
   String _previousStatus = "false";
   String _previousFaults = "No fault";
 
@@ -44,13 +42,11 @@ class _DashboardState extends State<Dashboard> {
             event.snapshot.value as Map<dynamic, dynamic>,
           );
 
-          // Extract only sensor_data for charts
           final sensorData = Map<String, dynamic>.from(
             fullData['sensor_data'] ?? {},
           );
           _dataManager.updateData(sensorData);
 
-          // Fault detection uses the whole data
           _checkForFaults(fullData);
         });
       }
@@ -73,7 +69,6 @@ class _DashboardState extends State<Dashboard> {
     final currentFaults = data['faults']?.toString() ?? "No fault";
     final sensorData = Map<String, dynamic>.from(data['sensor_data'] ?? {});
 
-    // ✅ Update global fault status so other widgets (like MeterDetailsContainer) can use it
     faultProvider.updateStatus(currentStatus == "true", currentFaults);
 
     if (currentStatus == "true" &&
