@@ -163,6 +163,7 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
                         ? Colors.redAccent.withOpacity(0.7)
                         : const Color.fromRGBO(0, 167, 167, 0.7),
                   ),
+                  faultDetected ? SizedBox(height: 4) : SizedBox(height: 32),
                   Text(
                     faultDetected ? " Fault\nDetected" : " Active",
                     style: TextStyle(
