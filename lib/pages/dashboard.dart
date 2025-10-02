@@ -40,7 +40,7 @@ class _DashboardState extends State<Dashboard> {
     _dataStream.listen((event) {
       if (event.snapshot.value != null) {
         setState(() {
-          final data = Map<String, dynamic>.from(
+          final fullData = Map<String, dynamic>.from(
             event.snapshot.value as Map<dynamic, dynamic>,
           );
           _dataManager.updateData(data);
