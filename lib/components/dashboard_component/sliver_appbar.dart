@@ -23,6 +23,7 @@ class _MySliverAppBarState extends State<MySliverAppBar> {
   final NotificationService notificationService = NotificationService();
   @override
   Widget build(BuildContext context) {
+    final notificationService = Provider.of<NotificationService>(context);
     Size size = MediaQuery.of(context).size;
 
     return SliverAppBar(
