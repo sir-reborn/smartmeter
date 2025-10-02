@@ -135,7 +135,9 @@ class _MetersDetailsContainerState extends State<MetersDetailsContainer> {
                     : const Color.fromRGBO(0, 167, 167, 0.12),
                 child: Icon(
                   CupertinoIcons.antenna_radiowaves_left_right,
-                  color: const Color.fromRGBO(0, 167, 167, 1),
+                  color: faultDetected
+                      ? Colors.redAccent
+                      : const Color.fromRGBO(0, 167, 167, 1),
                   size: size.width / 12,
                 ),
               ),
