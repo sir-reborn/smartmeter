@@ -43,7 +43,15 @@ class _DashboardState extends State<Dashboard> {
           final fullData = Map<String, dynamic>.from(
             event.snapshot.value as Map<dynamic, dynamic>,
           );
-          _dataManager.updateData(data);
+
+          // Extract only sensor_data for charts
+          final sensorData = Map<String, dynamic>.from(
+            fullData['sensor_data'] ?? {},
+          );
+          _dataManager.updateData(sensorData);
+
+          // Fault detection uses the whole data
+          _checkForFaults(fullData);
         });
       }
     });
