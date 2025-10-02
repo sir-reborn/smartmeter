@@ -15,6 +15,8 @@ class NotificationsScreen extends StatefulWidget {
 class _NotificationsScreenState extends State<NotificationsScreen> {
   @override
   Widget build(BuildContext context) {
+    final notificationService = Provider.of<NotificationService>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notifications'),
