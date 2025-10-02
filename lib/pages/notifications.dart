@@ -93,6 +93,32 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             ),
     );
   }
+
+  void _showClearAllDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Clear all notifications?'),
+        content: const Text('This action cannot be undone.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Provider.of<NotificationService>(
+                context,
+                listen: false,
+              ).clearAllNotifications();
+              Navigator.pop(context);
+            },
+            child: const Text('Clear', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class NotificationCard extends StatelessWidget {
