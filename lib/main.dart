@@ -33,47 +33,7 @@ class RealTimeEnergyMonitorApp extends StatelessWidget {
       ),
     );
   }
-
-  Widget _buildChart(String title, List<DataPoint> data, Color color) {
-    return Card(
-      elevation: 4,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Text(
-              title,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Container(
-              height: 200,
-              child: SfCartesianChart(
-                primaryXAxis: CategoryAxis(
-                  labelRotation: 45, // Rotates X labels to prevent overlap.
-                  labelIntersectAction: AxisLabelIntersectAction
-                      .rotate45, // Ensures labels don’t overwrite each other.
-                ),
-                series: <SplineSeries<DataPoint, String>>[
-                  SplineSeries<DataPoint, String>(
-                    dataSource: data, //your List<DataPoint>
-                    xValueMapper: (DataPoint point, _) =>
-                        point.time, // maps DataPoint.time to the x-axis
-                    yValueMapper: (DataPoint point, _) => point.value,
-                    color: color,
-                    markerSettings: MarkerSettings(
-                      isVisible: true,
-                    ), //shows dots at each data point for visibility
-                  ),
-                ],
-                tooltipBehavior: TooltipBehavior(enable: true),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+}
 
   Widget _buildLatestValues() {
     return Card(
