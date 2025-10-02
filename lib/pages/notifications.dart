@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smartmeter/components/dashboard_component/notif_appBar.dart';
-import 'package:smartmeter/components/dashboard_component/notification_service.dart';
+import 'package:provider/provider.dart';
+import 'package:smartmeter/service/notification_service.dart';
+import 'package:smartmeter/pages/notification_detail_screen.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
