@@ -62,8 +62,9 @@ class NotificationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      color: isRead ? Colors.grey[100] : Colors.blue[50],
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      color: notification.isRead ? Colors.grey[100] : Colors.blue[50],
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
